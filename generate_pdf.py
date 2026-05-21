@@ -1,7 +1,7 @@
 """
-generate_pdf.py - Antigravity Project Roadmap PDF Generator
+generate_pdf.py - Project Roadmap PDF Generator
 Creates a premium, visually rich PDF showcasing 50+ projects
-buildable with Google Antigravity IDE.
+curated by Shaurya Mishra.
 """
 
 from fpdf import FPDF
@@ -87,11 +87,8 @@ DIFFICULTY_COLORS = {
 PROJECTS = {
     "Web Development": [
         {
-            "name": "Personal Portfolio Website",
-            "desc": "A cinematic, scroll-driven portfolio with parallax effects, glassmorphism cards, and smooth page transitions. Features dark mode, project showcases, and contact form.",
-            "tech": ["HTML", "CSS", "JavaScript", "GSAP"],
-            "difficulty": "Beginner",
-            "time": "2-3 hours",
+            
+        
         },
         {
             "name": "E-Commerce Storefront",
@@ -509,11 +506,11 @@ class RoadmapPDF(FPDF):
         self.set_y(55)
         self.set_font("Helvetica", "B", 42)
         self.set_text_color(*WHITE)
-        self.cell(0, 18, "ANTIGRAVITY", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 18, "PROJECT ROADMAP", align="C", new_x="LMARGIN", new_y="NEXT")
 
         self.set_font("Helvetica", "", 16)
         self.set_text_color(*ACCENT_BLUE)
-        self.cell(0, 10, "PROJECT ROADMAP 2026", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 10, "CURATED BY SHAURYA MISHRA // 2026", align="C", new_x="LMARGIN", new_y="NEXT")
 
         # Divider
         self.ln(5)
@@ -525,9 +522,9 @@ class RoadmapPDF(FPDF):
         self.set_text_color(*MUTED)
         self.multi_cell(0, 7,
             sanitize(
-                "A comprehensive collection of 50+ projects you can build with\n"
-                "Google Antigravity - the agent-first AI development environment.\n"
-                "From beginner web apps to expert-level AI systems."
+                "A comprehensive collection of 50+ projects curated by Shaurya Mishra.\n"
+                "Designed to elevate engineering, architecture, and coding skills.\n"
+                "From beginner web apps to expert-level distributed systems."
             ),
             align="C"
         )
@@ -599,7 +596,7 @@ class RoadmapPDF(FPDF):
         self.set_y(260)
         self.set_font("Helvetica", "", 8)
         self.set_text_color(*DIM)
-        self.cell(0, 5, "Built with Google Antigravity IDE  |  github.com/24052110", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 5, "Curated by Shaurya Mishra  |  Roadmap 2026", align="C", new_x="LMARGIN", new_y="NEXT")
         self.cell(0, 5, "Generated April 2026", align="C")
 
         # Bottom gradient bar
@@ -667,7 +664,7 @@ class RoadmapPDF(FPDF):
         self.ln(2)
         self.set_font("Helvetica", "", 10)
         self.set_text_color(*MUTED)
-        self.cell(0, 6, f"{len(projects)} Projects  |  Build with Antigravity", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 6, f"{len(projects)} Projects  |  Roadmap 2026", align="C", new_x="LMARGIN", new_y="NEXT")
         self.ln(4)
         self._gradient_bar(self.get_y(), 0.5, color, DARK_BG)
         self.ln(8)
@@ -824,25 +821,25 @@ class RoadmapPDF(FPDF):
         self.ln(15)
         self.set_font("Helvetica", "B", 14)
         self.set_text_color(*WHITE)
-        self.cell(0, 10, "ABOUT ANTIGRAVITY", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 10, "ABOUT THE ROADMAP", align="C", new_x="LMARGIN", new_y="NEXT")
         self.ln(3)
 
         self.set_x(20)
         self.set_font("Helvetica", "", 9)
         self.set_text_color(*MUTED)
         about_text = (
-            "Google Antigravity is an agent-first integrated development environment (IDE) "
-            "built by Google DeepMind. Unlike traditional AI coding assistants, Antigravity "
-            "treats AI agents as autonomous collaborators that can plan, execute, and verify "
-            "complex end-to-end tasks across your editor, terminal, and a live browser.\n\n"
-            "Key capabilities:\n"
-            "  - Autonomous end-to-end code generation and execution\n"
-            "  - Multi-model support (Gemini, Claude, GPT)\n"
-            "  - Integrated browser for UI testing and validation\n"
-            "  - Artifact-based communication (plans, tasks, walkthroughs)\n"
-            "  - Knowledge base that learns from your interactions\n\n"
-            "Every project in this roadmap can be built entirely within Antigravity, "
-            "from initial planning to deployment, using natural language instructions."
+            "This roadmap is a meticulously compiled guide of 50+ real-world software engineering "
+            "projects curated by Shaurya Mishra. Designed to bridge the gap between academic coding "
+            "and professional-grade software development, it provides actionable specifications "
+            "and architectural profiles for high-impact building blocks.\n\n"
+            "Core disciplines covered:\n"
+            "  - Next-generation Web Applications and Scalable Services\n"
+            "  - Machine Learning models and Agentic Systems\n"
+            "  - Distributed Systems, Cloud Automation, and Security Vaults\n"
+            "  - Interactive graphics and Game Development engines\n"
+            "  - IoT Hardware control and Edge computing interfaces\n\n"
+            "Each module contains curated target stacks, functional specifications, "
+            "and precise estimation bounds to accelerate hands-on engineering experience."
         )
         self.multi_cell(170, 5, about_text)
 
@@ -852,7 +849,7 @@ class RoadmapPDF(FPDF):
         self.ln(5)
         self.set_font("Helvetica", "", 8)
         self.set_text_color(*DIM)
-        self.cell(0, 5, "github.com/24052110  |  Built with Antigravity  |  April 2026", align="C")
+        self.cell(0, 5, "github.com/shaurya1906  |  Curated by Shaurya Mishra  |  2026", align="C")
 
         # Bottom bar
         self._gradient_bar(293, 4, ACCENT_BLUE, ACCENT_PURPLE)
@@ -873,11 +870,11 @@ class RoadmapPDF(FPDF):
 
         steps = [
             ("01", "PICK YOUR LEVEL", "Start with projects matching your skill level. Beginners start with portfolio sites or CLI tools. Work up to Expert projects.", ACCENT_GREEN),
-            ("02", "OPEN ANTIGRAVITY", "Launch Google Antigravity IDE and open a fresh workspace. Each project is fully self-contained.", ACCENT_BLUE),
-            ("03", "DESCRIBE THE PROJECT", "Paste the project description as your prompt. Antigravity will generate an implementation plan for your review.", ACCENT_PURPLE),
+            ("02", "OPEN WORKSPACE", "Launch your preferred IDE (e.g. VS Code, Cursor) and open a fresh workspace. Each project is fully self-contained.", ACCENT_BLUE),
+            ("03", "DESCRIBE THE PROJECT", "Paste the project specifications or design outlines as your starting blueprint. Map out the database schema, data flows, and routing.", ACCENT_PURPLE),
             ("04", "APPROVE & BUILD", "Review the plan, approve it, and watch the agent scaffold your entire project - code, styles, and config.", ACCENT_ORANGE),
             ("05", "ITERATE & POLISH", "Use follow-up prompts to refine the UI, add features, fix bugs, and deploy. The agent handles it all.", ACCENT_PINK),
-            ("06", "DEPLOY TO GITHUB", "Push your finished project to GitHub. Antigravity can create repos, commit, and configure CI/CD.", ACCENT_CYAN),
+            ("06", "DEPLOY TO GITHUB", "Push your finished project to GitHub. Setup comprehensive unit tests, configure CD pipelines, and make it live.", ACCENT_CYAN),
         ]
 
         for num, title, desc, color in steps:
@@ -924,12 +921,12 @@ class RoadmapPDF(FPDF):
         self.set_xy(25, y + 6)
         self.set_font("Helvetica", "B", 12)
         self.set_text_color(*WHITE)
-        self.cell(160, 7, "Ready to build? Open Antigravity and start creating!", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(160, 7, "Ready to build? Open your editor and start creating!", align="C", new_x="LMARGIN", new_y="NEXT")
 
         self.set_xy(25, y + 15)
         self.set_font("Helvetica", "", 8)
         self.set_text_color(*ACCENT_BLUE)
-        self.cell(160, 6, "antigravity.google  |  Free to use  |  All platforms", align="C")
+        self.cell(160, 6, "github.com/shaurya1906  |  Roadmap 2026  |  All rights reserved", align="C")
 
         self._gradient_bar(293, 4, ACCENT_GREEN, ACCENT_CYAN)
 
@@ -954,6 +951,6 @@ class RoadmapPDF(FPDF):
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 if __name__ == "__main__":
-    output = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Antigravity_Project_Roadmap_2026.pdf")
+    output = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Project_Roadmap_2026.pdf")
     pdf = RoadmapPDF()
     pdf.build(output)

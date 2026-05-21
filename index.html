@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Roadmap 2026 | Interactive Dashboard</title>
+  <meta name="description" content="Explore Shaurya's ultimate roadmap of 50+ projects for 2026. Interactive categories, skill tiers, and prompt generation.">
+  <meta name="author" content="Shaurya Mishra">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Cybernetic Ambient Backdrop -->
+  <div class="aurora-backdrop" aria-hidden="true">
+    <div class="glow-orb blue-glow"></div>
+    <div class="glow-orb purple-glow"></div>
+    <div class="glow-orb pink-glow"></div>
+  </div>
+  <div class="mesh-grid-overlay" aria-hidden="true"></div>
+  <div class="cyber-scanlines" aria-hidden="true"></div>
+
+  <!-- Main Container -->
+  <main class="dashboard-wrapper">
+    
+    <!-- Top Nav / Header -->
+    <header class="dashboard-header">
+      <div class="header-branding">
+        <span class="cyber-dot"></span>
+        <span class="branding-title">SHAURYA MISHRA</span>
+        <span class="branding-sub">ROADMAP 2026</span>
+      </div>
+      <div class="header-actions">
+        <a href="./Project_Roadmap_2026.pdf" download class="btn-pdf-download" id="downloadPdfCta">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+          Download PDF Roadmap
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero / Metrics Dashboard Section -->
+    <section class="metrics-hero-section">
+      <div class="hero-text-block">
+        <h1 class="hero-headline">
+          Weapon of <span class="gradient-accent-text">Mass Creation</span>
+        </h1>
+        <p class="hero-paragraph">
+          Explore and launch 50 highly optimized projects buildable end-to-end. Select a domain, filter by difficulty, and copy the specifications straight to your compiler.
+        </p>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card cyan-border">
+          <span class="metric-value" id="statProjectsCount">50</span>
+          <span class="metric-label">TOTAL MODULES</span>
+        </div>
+        <div class="metric-card purple-border">
+          <span class="metric-value" id="statCategoriesCount">10</span>
+          <span class="metric-label">DOMAINS</span>
+        </div>
+        <div class="metric-card green-border">
+          <span class="metric-value" id="statHoursCount">300+</span>
+          <span class="metric-label">BUILD HOURS</span>
+        </div>
+        <div class="metric-card orange-border">
+          <span class="metric-value" id="statTiersCount">4</span>
+          <span class="metric-label">SKILL TIERS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search and Filters Section -->
+    <section class="controls-panel">
+      
+      <!-- Interactive Inputs -->
+      <div class="search-and-diff-row">
+        <!-- Search Input with Cyber Icon -->
+        <div class="search-input-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="roadmapSearch" class="search-box" placeholder="Search modules, stack technologies, or keywords..." autocomplete="off">
+          <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search">&times;</button>
+        </div>
+
+        <!-- Difficulty Quick Filters -->
+        <div class="difficulty-filters-wrapper">
+          <span class="filter-heading-lbl">DIFFICULTY:</span>
+          <div class="diff-btn-group" id="difficultyBtnGroup">
+            <button class="diff-filter-btn active" data-diff="all">ALL</button>
+            <button class="diff-filter-btn" data-diff="Beginner" data-color="var(--neon-green)">BEGINNER</button>
+            <button class="diff-filter-btn" data-diff="Intermediate" data-color="var(--neon-orange)">INTERMEDIATE</button>
+            <button class="diff-filter-btn" data-diff="Advanced" data-color="var(--neon-red)">ADVANCED</button>
+            <button class="diff-filter-btn" data-diff="Expert" data-color="var(--neon-purple)">EXPERT</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain Category Tabs -->
+      <div class="category-tabs-carousel">
+        <div class="tabs-container-track" id="categoryTabsTrack">
+          <!-- Dynamically populated categories -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Main Output / Grid Section -->
+    <section class="grid-display-section">
+      
+      <!-- Staggered grid of projects -->
+      <div class="projects-dynamic-grid" id="projectsRenderGrid">
+        <!-- Loader Skeleton Screens will be replaced dynamically -->
+        <div class="skeleton-loader-card"></div>
+        <div class="skeleton-loader-card"></div>
+        <div class="skeleton-loader-card"></div>
+        <div class="skeleton-loader-card"></div>
+        <div class="skeleton-loader-card"></div>
+        <div class="skeleton-loader-card"></div>
+      </div>
+
+      <!-- Beautiful Empty State -->
+      <div class="empty-state-container" id="emptyStateBlock" style="display: none;">
+        <div class="empty-cyber-radar">
+          <div class="radar-pulse"></div>
+          <div class="radar-line"></div>
+        </div>
+        <h3 class="empty-headline">Zero Matching Modules Detected</h3>
+        <p class="empty-subtext">No blueprints fit the current search matrix. Try adjusting your difficulty or keyword query parameters.</p>
+        <button class="btn-neon-action" id="resetFiltersCta">Reset Global Filter Matrix</button>
+      </div>
+
+    </section>
+
+    <!-- Cyber Footer -->
+    <footer class="dashboard-footer">
+      <div class="footer-left">
+        <span>© 2026 Shaurya Mishra. All blueprints authenticated. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-code-meta">SYSTEM STATUS: ACTIVE // LATENCY: 2.4ms // REVISION: 4.1.0</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Interactive Prompt Copied Toast Container -->
+  <div class="toast-stack-container" id="toastStack"></div>
+
+  <!-- Load Database and Application logic -->
+  <script src="app.js"></script>
+</body>
+</html>

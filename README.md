@@ -1,6 +1,6 @@
-# 🚀 Antigravity Project Roadmap 2026
+# 🚀 Project Roadmap 2026
 
-A comprehensive collection of **51 projects** you can build with [Google Antigravity](https://antigravity.google) — the agent-first AI development environment by Google DeepMind.
+A comprehensive collection of **51 projects** curated by Shaurya Mishra.
 
 ## 📋 What's Inside
 
@@ -28,15 +28,15 @@ The PDF roadmap covers **10 categories** with projects spanning all skill levels
 
 ## 📄 Download the Roadmap
 
-👉 [**Antigravity_Project_Roadmap_2026.pdf**](./Antigravity_Project_Roadmap_2026.pdf)
+👉 [**Project_Roadmap_2026.pdf**](./Project_Roadmap_2026.pdf)
 
 ## 🛠️ How to Use
 
 1. Pick a project matching your skill level
-2. Open **Google Antigravity IDE**
-3. Paste the project description as your prompt
+2. Open your IDE or compiler
+3. Paste the project description as your prompt or design specs
 4. Review and approve the implementation plan
-5. Watch the agent build your project end-to-end
+5. Build your project end-to-end
 6. Iterate, polish, and deploy!
 
 ## ⚡ Featured Projects
@@ -57,5 +57,5 @@ The PDF roadmap covers **10 categories** with projects spanning all skill levels
 
 ---
 
-*Built with ❤️ using Google Antigravity IDE*
+*Curated with ❤️ by Shaurya Mishra*
 *Generated April 2026*
